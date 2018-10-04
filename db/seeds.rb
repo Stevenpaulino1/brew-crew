@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Brew.destroy_all
+Customer.destroy_all
+Purchase.destroy_all
 
 5.times do
   Brew.create(
@@ -15,3 +17,12 @@
     strength: rand(1..5)
   )
 end
+
+Customer.create(name:"Jane Costa", occupation:"Rockstar")
+Customer.create(name:"Steven",occupation: "FSD")
+Customer.create(name:"Eric",occupation: "snacker")
+
+Purchase.create(customer_id: Customer.all.sample, brew_id: Brew.all.sample, size: "Small")
+Purchase.create(customer_id: Customer.all.sample, brew_id: Brew.all.sample, size: "Small")
+Purchase.create(customer_id: Customer.all.sample, brew_id: Brew.all.sample, size: "Medium")
+Purchase.create(customer_id: Customer.all.sample, brew_id: Brew.all.sample, size: "Large")
