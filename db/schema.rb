@@ -27,16 +27,4 @@ ActiveRecord::Schema.define(version: 20180524141014) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "purchases", force: :cascade do |t|
-    t.integer "num_of_sugars"
-    t.string "creamer_strength"
-    t.boolean "iced"
-    t.string "special_instructions"
-    t.string "size"
-    t.integer "customer_id"
-    t.integer "brew_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
